@@ -13,6 +13,8 @@ The current capabilities are the following:
 
 - Mathematical representation of the interpolant polynomial.
 
+<br>
+
 # How to install it?
 
 ```shell
@@ -20,6 +22,8 @@ pip install simple-interpolator
 ```
 
 > Find out more [here](https://pypi.org/project/simple-interpolator/).
+
+<br>
 
 # How to use it?
 
@@ -29,12 +33,14 @@ The library `simple_interpolator` provides a file `interpolator` encapsulating a
 from simple_interpolator.interpolator import Interpolator
 ```
 
+<br>
+
 # `Interpolator` class
 
-|             |                                                |
-| :---------: | :--------------------------------------------- |
-|  `show()`   | three-dimentional graph of the interpolant     |
-|   `data`    | a list of the initial coordinates              |
-|     `f`     | an interpolant function                        |
+|     members | desription                                     |
+| ----------: | :--------------------------------------------- |
+|    `show()` | three-dimentional graph of the interpolant     |
+|      `data` | a list of the initial coordinates              |
+|         `f` | an interpolant function                        |
 | `print_f()` | mathematical representation of the interpolant |
 
