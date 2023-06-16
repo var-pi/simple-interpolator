@@ -13,7 +13,7 @@ class Interpolator:
 
     def __generate_power_touples(self):
         rank = math.ceil(len(self.data)**0.5)-1
-        return [[i, j] for i in range(rank+1) for j in range(rank+1)]
+        return [[i, j] for j in range(rank+1) for i in range(rank+1)]
 
     def __generate_b(self):
         def power_values(x, y):
@@ -33,7 +33,8 @@ class Interpolator:
     def print_f(self, accuracy=-1):
         print(f_as_text(self.__b, self.__power_touples,accuracy))
 
-    def show(self, kpu=10):
+    def show(self, knots_per_unit=10):
+        kpu = knots_per_unit
         def bound(f, axis_id):
             return functools.reduce(lambda acc, touple : f(touple[axis_id], acc), self.data, self.data[0][axis_id])
 
