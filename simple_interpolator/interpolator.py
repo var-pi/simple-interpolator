@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import functools
 import math
-from simple_interpolator.stylizer import f_as_text
-from simple_interpolator.visual_settings import set_up_axis
+# from simple_interpolator.stylizer import f_as_text
+from stylizer import f_as_text
 
 class Interpolator:
     def __init__(self, data):
@@ -34,15 +34,35 @@ class Interpolator:
     def print_f(self, accuracy=-1):
         print(f_as_text(self.__b, self.__power_touples,accuracy))
 
-    def show(self, knots_per_unit=10):
-        kpu = knots_per_unit
+    def __getXYZ(self, knots_per_unit):
         bound = lambda f, axis_id : functools.reduce(lambda acc, touple : f(touple[axis_id], acc), self.data, self.data[0][axis_id])
 
-        X = np.outer(np.linspace(bound(min, 0), bound(max, 0), kpu), np.ones(kpu))
-        Y = np.outer(np.linspace(bound(min, 1), bound(max, 1), kpu), np.ones(kpu)).T
+        X, Y = np.meshgrid(
+                np.linspace(bound(min, 0), bound(max, 0), knots_per_unit), 
+                np.linspace(bound(min, 1), bound(max, 1), knots_per_unit))
+        
         Z = self.f(X, Y)
-        ax = plt.axes(projection ='3d')
-        set_up_axis(ax)
-        ax.plot_surface(X, Y, Z)
-        [ax.scatter(touple[0], touple[1], touple[2]) for touple in self.data]
+        return X, Y, Z
+
+    def graph(self, knots_per_unit=10, alpha=1, show_provided=False):
+        X,Y,Z = self.__getXYZ(knots_per_unit)
+
+        ax = plt.subplot(projection ='3d')
+        ax.set_xlabel("x")
+        ax.set_ylabel("y")
+        ax.set_zlabel("z")
+        ax.plot_surface(X, Y, Z, alpha=alpha)
+        if show_provided:
+            [ax.scatter(touple[0], touple[1], touple[2], c='g') for touple in self.data]
+
+    def colormap(self, knots_per_unit=1000):
+        X,Y,Z = self.__getXYZ(knots_per_unit)
+
+        fig, ax = plt.subplots()
+        ax.set_xlabel("x")
+        ax.set_ylabel("y")
+        pc = ax.pcolormesh(X, Y, Z, cmap='RdBu_r')
+        fig.colorbar(pc, ax=ax)
+
+    def show(self):
         plt.show()
