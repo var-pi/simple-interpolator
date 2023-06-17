@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import functools
 import math
-from simple_interpolator.stylizer import f_as_text
+from stylizer import f_as_text
+from visual_settings import set_up_axis
 
 class Interpolator:
     def __init__(self, data):
@@ -35,13 +36,13 @@ class Interpolator:
 
     def show(self, knots_per_unit=10):
         kpu = knots_per_unit
-        def bound(f, axis_id):
-            return functools.reduce(lambda acc, touple : f(touple[axis_id], acc), self.data, self.data[0][axis_id])
+        bound = lambda f, axis_id : functools.reduce(lambda acc, touple : f(touple[axis_id], acc), self.data, self.data[0][axis_id])
 
         X = np.outer(np.linspace(bound(min, 0), bound(max, 0), kpu), np.ones(kpu))
         Y = np.outer(np.linspace(bound(min, 1), bound(max, 1), kpu), np.ones(kpu)).T
         Z = self.f(X, Y)
         ax = plt.axes(projection ='3d')
+        set_up_axis(ax)
         ax.plot_surface(X, Y, Z)
         [ax.scatter(touple[0], touple[1], touple[2]) for touple in self.data]
         plt.show()

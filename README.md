@@ -74,8 +74,6 @@ Generated interpolant:
         9.7+1.5x+0.4x²-0.1y-0.1xy-0.1x²y+0.2y²
 ```
 
-<!-- ![an image of the interpolant](./assets/bilinear_interpolant.png) -->
-
 <a href="url"><img src="./assets/bilinear_interpolant.png" style="border-radius:12px"></a>
 
 > A visualisation of an interpolant is provided as a rotatable 3D object. The picture presented here is just an illustration.
