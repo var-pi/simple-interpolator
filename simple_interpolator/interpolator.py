@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import functools
 import math
-# from simple_interpolator.stylizer import f_as_text
-from stylizer import f_as_text
+from simple_interpolator.stylizer import f_as_text
 
 class Interpolator:
     def __init__(self, data):
