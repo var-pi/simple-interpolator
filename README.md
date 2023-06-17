@@ -37,12 +37,12 @@ from simple_interpolator.interpolator import Interpolator
 
 # `Interpolator` class
 
-|   members   | desription                                     |
-| :---------: | :--------------------------------------------- |
-|  `show()`   | three-dimentional graph of the interpolant     |
-|   `data`    | a list of the provided coordinates             |
-|     `f`     | an interpolant function                        |
-| `print_f()` | mathematical representation of the interpolant |
+|                    members                     | desription                                     |
+| :--------------------------------------------: | :--------------------------------------------- |
+|    [`show()`](./docs/Interpolator/show.md)     | three-dimentional graph of the interpolant     |
+|                     `data`                     | a list of the provided coordinates             |
+|                      `f`                       | an interpolant function                        |
+| [`print_f()` ](./docs/Interpolator/print_f.md) | mathematical representation of the interpolant |
 
 <br>
 

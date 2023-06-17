@@ -2,8 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import functools
 import math
-from simple_interpolator.stylizer import f_as_text
-from simple_interpolator.visual_settings import set_up_axis
+# from simple_interpolator.stylizer import f_as_text
+# from simple_interpolator.visual_settings import set_up_axis
+from stylizer import f_as_text
+from visual_settings import set_up_axis
 
 class Interpolator:
     def __init__(self, data):
@@ -34,7 +36,7 @@ class Interpolator:
     def print_f(self, accuracy=-1):
         print(f_as_text(self.__b, self.__power_touples,accuracy))
 
-    def show(self, knots_per_unit=10):
+    def show(self, knots_per_unit=10, alpha=1, show_provided=False):
         kpu = knots_per_unit
         bound = lambda f, axis_id : functools.reduce(lambda acc, touple : f(touple[axis_id], acc), self.data, self.data[0][axis_id])
 
@@ -43,6 +45,7 @@ class Interpolator:
         Z = self.f(X, Y)
         ax = plt.axes(projection ='3d')
         set_up_axis(ax)
-        ax.plot_surface(X, Y, Z)
-        [ax.scatter(touple[0], touple[1], touple[2]) for touple in self.data]
+        ax.plot_surface(X, Y, Z, alpha=alpha)
+        if show_provided:
+            [ax.scatter(touple[0], touple[1], touple[2], c='g') for touple in self.data]
         plt.show()
