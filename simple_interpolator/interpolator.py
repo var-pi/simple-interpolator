@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import functools
 import math
-from stylizer import f_as_text
-from visual_settings import set_up_axis
+from simple_interpolator.stylizer import f_as_text
+from simple_interpolator.visual_settings import set_up_axis
 
 class Interpolator:
     def __init__(self, data):
