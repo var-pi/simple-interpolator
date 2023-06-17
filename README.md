@@ -79,8 +79,8 @@ Generated interpolant:
         9.7+1.5x+0.4x²-0.1y-0.1xy-0.1x²y+0.2y²
 ```
 
-<a href="url"><img src="./assets/graph.png" style="border-radius:12px"></a>
-<a href="url"><img src="./assets/colormap.png" style="border-radius:12px"></a>
+<a href="url"><img src="./assets/graph.png" style="border-radius:12px" width="100%"></a>
+<a href="url"><img src="./assets/colormap.png" style="border-radius:12px" width="100%"></a>
 
 > The spacial visualisation is provided as a rotatable 3D object. The picture presented here is just an illustration.
 
