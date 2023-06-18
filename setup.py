@@ -3,7 +3,7 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 DESCRIPTION = 'A simple interpolator.'
 
 # Setting up

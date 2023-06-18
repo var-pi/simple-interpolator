@@ -37,14 +37,18 @@ from simple_interpolator.interpolator import Interpolator
 
 # `Interpolator` class
 
-|                     members                     | desription                                     |
-| :---------------------------------------------: | :--------------------------------------------- |
-|    [`graph()`](./docs/Interpolator/graph.md)    | three-dimentional graph of the interpolant     |
-| [`colormap()`](./docs/Interpolator/colormap.md) | two-dimentional colormap of the interpolant    |
-|                    `show()`                     | renders all of the visualisations              |
-|                     `data`                      | a list of the provided coordinates             |
-|                       `f`                       | an interpolant function                        |
-| [`print_f()` ](./docs/Interpolator/print_f.md)  | mathematical representation of the interpolant |
+|                            members                            | desription                                     |
+| :-----------------------------------------------------------: | :--------------------------------------------- |
+|           [`graph()`](./docs/Interpolator/graph.md)           | three-dimentional graph of the interpolant     |
+|        [`colormap()`](./docs/Interpolator/colormap.md)        | two-dimentional colormap of the interpolant    |
+|            [`show()`](./docs/Interpolator/show.md)            | renders all of the visualisations              |
+|  [`add_coordinate()`](./docs/Interpolator/add_coordiante.md)  | provide an additional coordiante               |
+| [`add_coordinates()`](./docs/Interpolator/add_coordinates.md) | provide a list of additional coordinates       |
+|        [`set_rank()`](./docs/Interpolator/set_rank.md)        | set a max power of a variable                  |
+|       [`auto_rank()`](./docs/Interpolator/auto_rank.md)       | fit the data perfectly automatically           |
+|                            `data`                             | a list of the provided coordinates             |
+|                              `f`                              | an interpolant function                        |
+|        [`print_f()` ](./docs/Interpolator/print_f.md)         | mathematical representation of the interpolant |
 
 <br>
 
